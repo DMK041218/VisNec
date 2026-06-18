@@ -32,7 +32,7 @@ VisNec measures visual necessity in multimodal instruction data and uses that si
 
 ## Dataset
 
-The released VisNec dataset artifacts are hosted on Hugging Face:
+The released VisNec selected dataset and lora are hosted on Hugging Face:
 
 - `llava_v1.5-7b-top15.json`
 - `llava_v1.5-7b-top15_vf.json`
