@@ -3,13 +3,13 @@
 <p align="center"><b>ECCV 2026</b></p>
 
 <p align="center">
-  **Mingkang Dong<sup>*</sup> ·
+  Mingkang Dong<sup>*</sup> ·
   Hongyi Cai<sup>*</sup> ·
   Jie Li ·
   Sifan Zhou ·
   Bin Ren ·
   Kunyu Peng ·
-  Yuqian Fu<sup>†</sup>**
+  Yuqian Fu<sup>†</sup>
 </p>
 
 <p align="center">
