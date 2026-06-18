@@ -15,12 +15,12 @@
 <p align="center">
   <sup>*</sup> Equal contribution &nbsp;&nbsp; <sup>†</sup> Corresponding author
 </p>
-<p align="center">
+
 [![Project Page](https://img.shields.io/badge/Project-Page-0f766e)](https://dmk041218.github.io/VisNec/)
 [![Paper](https://img.shields.io/badge/arXiv-2603.01195-b31b1b)](https://arxiv.org/abs/2603.01195)
 [![Dataset](https://img.shields.io/badge/HuggingFace-VisNec-f59e0b)](https://huggingface.co/datasets/aaakiyasuqqqa/VisNec)
 [![Code](https://img.shields.io/badge/GitHub-Code-111827)](https://github.com/DMK041218/VisNec)
-</p>
+
 VisNec measures visual necessity in multimodal instruction data and uses that signal to select more informative samples for data-efficient multimodal instruction tuning.
 
 ## Links
