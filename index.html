@@ -11,120 +11,76 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="VisNec home">VisNec</a>
-      <nav aria-label="Primary navigation">
-        <a href="#abstract">Abstract</a>
-        <a href="#method">Method</a>
-        <a href="#resources">Resources</a>
-        <a href="#citation">Citation</a>
-      </nav>
-    </header>
-
-    <main id="top">
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="venue">ECCV 2026</p>
-          <h1>VisNec: Measuring and Leveraging Visual Necessity for Multimodal Instruction Tuning</h1>
-          <p class="authors">Mingkang Dong, Hongyi Cai, Jie Li, Sifan Zhou, Bin Ren, Kunyu Peng, Yuqian Fu</p>
-          <p class="summary">
-            A data selection framework that estimates how necessary visual information is for multimodal
-            instruction samples, then uses that signal to tune stronger models with fewer examples.
-          </p>
-          <div class="actions" aria-label="Project resources">
-            <a class="button primary" href="https://arxiv.org/abs/2603.01195">Paper</a>
-            <a class="button" href="https://huggingface.co/datasets/aaakiyasuqqqa/VisNec">Dataset</a>
-            <a class="button" href="https://github.com/DMK041218/VisNec">Code</a>
-          </div>
-        </div>
-
-        <div class="hero-visual" aria-label="VisNec method overview">
-          <div class="sample-grid">
-            <span></span>
-            <span class="selected"></span>
-            <span></span>
-            <span class="selected warm"></span>
-            <span></span>
-            <span class="selected"></span>
-          </div>
-          <div class="score-panel">
-            <div>
-              <strong>Visual Necessity</strong>
-              <p>loss<sub>text</sub> - loss<sub>multimodal</sub></p>
-            </div>
-            <div class="meter"><span></span></div>
-          </div>
-          <div class="flow-row">
-            <span>Image-text data</span>
-            <span>Score</span>
-            <span>Select</span>
-            <span>Tune</span>
-          </div>
+    <main>
+      <section class="hero" id="top">
+        <p class="venue">ECCV 2026</p>
+        <h1>VisNec: Measuring and Leveraging Visual Necessity for Multimodal Instruction Tuning</h1>
+        <p class="authors">
+          <strong>Hongyi Cai</strong><sup>*</sup>,
+          <strong>Mingkang Dong</strong><sup>*</sup>,
+          Jie Li,
+          Sifan Zhou,
+          Bin Ren,
+          Kunyu Peng,
+          <strong>Yuqian Fu</strong><sup>&dagger;</sup>
+        </p>
+        <p class="notes"><sup>*</sup>Equal contribution &nbsp;&nbsp; <sup>&dagger;</sup>Corresponding author</p>
+        <div class="actions" aria-label="Project resources">
+          <a href="https://arxiv.org/abs/2603.01195">Paper</a>
+          <a href="https://huggingface.co/datasets/aaakiyasuqqqa/VisNec">Dataset</a>
+          <a href="https://github.com/DMK041218/VisNec">Code</a>
         </div>
       </section>
 
-      <section id="abstract" class="section narrow">
-        <p class="section-label">Abstract</p>
-        <h2>Selecting examples where vision actually matters.</h2>
+      <section class="teaser" aria-label="VisNec pipeline figure">
+        <img src="assets/visnec-flow.png" alt="VisNec pipeline overview" />
+      </section>
+
+      <section class="section" id="abstract">
+        <h2>Abstract</h2>
         <p>
-          Multimodal instruction datasets contain many samples where the visual input contributes unevenly.
-          VisNec measures visual necessity by comparing model loss with and without visual information, then
-          prioritizes samples where image evidence is most useful for instruction tuning.
+          The effectiveness of multimodal instruction tuning depends not only on dataset scale, but
+          critically on whether training samples genuinely require visual reasoning. VisNec measures the
+          marginal contribution of visual input by comparing predictive loss with and without visual context,
+          identifying whether a training instance is vision-critical, redundant, or misaligned.
+        </p>
+        <p>
+          To preserve task diversity, VisNec combines visual necessity scoring with semantic clustering and
+          selects high-necessity samples within each cluster. Across downstream benchmarks, this enables
+          data-efficient multimodal instruction tuning using only a compact selected subset.
         </p>
       </section>
 
-      <section id="method" class="section">
-        <p class="section-label">Method</p>
-        <h2>Pipeline</h2>
-        <div class="steps">
-          <article>
-            <span>01</span>
-            <h3>Score</h3>
-            <p>Compute a VisNec score for each multimodal instruction sample.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Balance</h3>
-            <p>Cluster task prompts and preserve task diversity during selection.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Select</h3>
-            <p>Keep the top 15% most visually necessary examples for tuning.</p>
-          </article>
-          <article>
-            <span>04</span>
-            <h3>Tune</h3>
-            <p>Fine-tune LLaVA with the selected VisNec subset and released LoRA artifacts.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="resources" class="section resources">
-        <p class="section-label">Resources</p>
-        <h2>Paper, dataset, and code</h2>
+      <section class="section" id="resources">
+        <h2>Resources</h2>
         <div class="resource-grid">
           <a href="https://arxiv.org/abs/2603.01195">
             <span>Paper</span>
             <strong>arXiv:2603.01195</strong>
-            <p>VisNec paper and citation metadata.</p>
           </a>
           <a href="https://huggingface.co/datasets/aaakiyasuqqqa/VisNec">
             <span>Dataset</span>
             <strong>Hugging Face</strong>
-            <p>Selected JSON files and LoRA artifacts.</p>
           </a>
           <a href="https://github.com/DMK041218/VisNec">
             <span>Code</span>
             <strong>GitHub</strong>
-            <p>Scoring scripts, subset construction, and LLaVA integration.</p>
           </a>
         </div>
       </section>
 
-      <section id="citation" class="section citation">
-        <p class="section-label">Citation</p>
-        <h2>Cite VisNec</h2>
+      <section class="section" id="dataset">
+        <h2>Released Artifacts</h2>
+        <ul class="artifact-list">
+          <li><code>llava_v1.5-7b-top15.json</code></li>
+          <li><code>llava_v1.5-7b-top15_vf.json</code></li>
+          <li><code>llava_v1.5-7b-top15_k20-lora/</code></li>
+          <li><code>llava_v1.5-7b-top15_vf-lora/</code></li>
+        </ul>
+      </section>
+
+      <section class="section" id="citation">
+        <h2>Citation</h2>
         <pre><code>@misc{dong2026visnecmeasuringleveragingvisual,
       title={VisNec: Measuring and Leveraging Visual Necessity for Multimodal Instruction Tuning},
       author={Mingkang Dong and Hongyi Cai and Jie Li and Sifan Zhou and Bin Ren and Kunyu Peng and Yuqian Fu},
