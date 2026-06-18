@@ -1,6 +1,6 @@
-# VisNec: Measuring and Leveraging Visual Necessity for Multimodal Instruction Tuning
+<h1 align="center">VisNec: Measuring and Leveraging Visual Necessity for Multimodal Instruction Tuning</h1>
 
-                              **ECCV 2026**
+<p align="center"><b>ECCV 2026</b></p>
 
 [![Project Page](https://img.shields.io/badge/Project-Page-0f766e)](https://dmk041218.github.io/VisNec/)
 [![Paper](https://img.shields.io/badge/arXiv-2603.01195-b31b1b)](https://arxiv.org/abs/2603.01195)
