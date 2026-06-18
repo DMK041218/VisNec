@@ -83,7 +83,7 @@ def train():
     trainer = LLaVATrainer(model=model, tokenizer=tokenizer, args=training_args, **data_module)
     
     # ---------------------------------------------------------
-    # 3. PVI Calculation
+    # 3. VisNec Calculation
     # ---------------------------------------------------------
     model.eval()
     model.config.use_cache = False 
@@ -91,7 +91,7 @@ def train():
     if not os.path.exists(training_args.output_dir):
         os.makedirs(training_args.output_dir)
     
-    output_csv = os.path.join(training_args.output_dir, "dataset_visionflan_large_fixed_pvi_scores.csv")
+    output_csv = os.path.join(training_args.output_dir, "dataset_visionflan_large_fixed_visnec_scores.csv")
     
     raw_data_list = trainer.train_dataset.list_data_dict
     total_len = len(raw_data_list)
@@ -104,7 +104,7 @@ def train():
             num_workers=8 
     )
     
-    print(f">>> Start PVI Calculation...")
+    print(f">>> Start VisNec Calculation...")
     print(f">>> Total Samples: {total_len}")
     print(f">>> Saving to: {output_csv}")
 
@@ -112,10 +112,10 @@ def train():
 
     with open(output_csv, mode='w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
-        writer.writerow(['row_idx', 'id', 'image_path', 'loss_multimodal', 'loss_text', 'pvi']) 
+        writer.writerow(['row_idx', 'id', 'image_path', 'loss_multimodal', 'loss_text', 'visnec']) 
 
         with torch.no_grad():
-            pbar = tqdm(enumerate(dataloader), total=total_len, desc="Calculating PVI")
+            pbar = tqdm(enumerate(dataloader), total=total_len, desc="Calculating VisNec")
             for i, batch in pbar:
                 if i < len(raw_data_list):
                     raw_item = raw_data_list[i]
@@ -151,16 +151,16 @@ def train():
                 outputs_t = model(**inputs_t)
                 loss_t = outputs_t.loss.item()
                 
-                pvi = loss_t - loss_m
+                visnec = loss_t - loss_m
                 
                 # Check First Batch
                 if i == 0:
                     print(f"\n[Check] ID: {original_id}")
                     print(f"[Check] Loss_M: {loss_m:.4f}")
                     print(f"[Check] Loss_T: {loss_t:.4f}")
-                    print(f"[Check] PVI: {pvi:.4f}")
+                    print(f"[Check] VisNec: {visnec:.4f}")
 
-                writer.writerow([i, original_id, image_path, f"{loss_m:.6f}", f"{loss_t:.6f}", f"{pvi:.6f}"])
+                writer.writerow([i, original_id, image_path, f"{loss_m:.6f}", f"{loss_t:.6f}", f"{visnec:.6f}"])
                 
                 if i % 50 == 0:
                     f.flush()

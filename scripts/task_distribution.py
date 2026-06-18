@@ -8,9 +8,9 @@ from tqdm import tqdm
 import torch
 
 
-PVI_CSV_PATH = "results/dataset_pvi_scores.csv"
+VisNec_CSV_PATH = "results/dataset_visnec_scores.csv"
 ORIGINAL_JSON_PATH = "llava-v1.5-instruct/llava_v1_5_mix665k.json"
-OUTPUT_JSON_PATH = "llava_v1.5-7b-top5-ab.json"
+OUTPUT_JSON_PATH = "llava_v1.5-7b-top15.json"
 
 NUM_CLUSTERS = 20           
 EMBEDDING_MODEL = 'all-MiniLM-L6-v2' 
@@ -29,12 +29,12 @@ def extract_clean_instruction(conversations):
 def main():
     print(f">>> [1/6] loading the original file")
     
-    df_scores = pd.read_csv(PVI_CSV_PATH, low_memory=False)
+    df_scores = pd.read_csv(VisNec_CSV_PATH, low_memory=False)
     
     if 'row_idx' not in df_scores.columns:
         df_scores['row_idx'] = df_scores.index
     
-    df_scores = df_scores[['row_idx', 'pvi']]
+    df_scores = df_scores[['row_idx', 'visnec']]
 
     df_meta = pd.read_json(ORIGINAL_JSON_PATH)
     df_meta['row_idx'] = df_meta.index 
@@ -57,6 +57,7 @@ def main():
         batch_size=1024,
         show_progress_bar=True,
         convert_to_numpy=True
+    )
 
     kmeans = MiniBatchKMeans(n_clusters=NUM_CLUSTERS, random_state=42, batch_size=2048, n_init='auto')
     df_merged['cluster_id'] = kmeans.fit_predict(embeddings)
@@ -76,7 +77,7 @@ def main():
     
         if n_keep == 0 and total_in_cluster > 0:
             n_keep = 1
-        subset = group.nlargest(n_keep, 'pvi')
+        subset = group.nlargest(n_keep, 'visnec')
         final_dfs.append(subset)
 
     df_selected = pd.concat(final_dfs)
