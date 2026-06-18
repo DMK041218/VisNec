@@ -3,13 +3,17 @@
 <p align="center"><b>ECCV 2026</b></p>
 
 <p align="center">
-  <a href="https://arxiv.org/search/cs?searchtype=author&query=Dong,+M">Mingkang Dong</a> ·
-  <a href="https://arxiv.org/search/cs?searchtype=author&query=Cai,+H">Hongyi Cai</a> ·
-  <a href="https://arxiv.org/search/cs?searchtype=author&query=Li,+J">Jie Li</a> ·
-  <a href="https://arxiv.org/search/cs?searchtype=author&query=Zhou,+S">Sifan Zhou</a> ·
-  <a href="https://arxiv.org/search/cs?searchtype=author&query=Ren,+B">Bin Ren</a> ·
-  <a href="https://arxiv.org/search/cs?searchtype=author&query=Peng,+K">Kunyu Peng</a> ·
-  <a href="https://arxiv.org/search/cs?searchtype=author&query=Fu,+Y">Yuqian Fu</a>
+  Mingkang Dong<sup>*</sup> ·
+  Hongyi Cai<sup>*</sup> ·
+  Jie Li ·
+  Sifan Zhou ·
+  Bin Ren ·
+  Kunyu Peng ·
+  Yuqian Fu<sup>†</sup>
+</p>
+
+<p align="center">
+  <sup>*</sup> Equal contribution &nbsp;&nbsp; <sup>†</sup> Corresponding author
 </p>
 
 [![Project Page](https://img.shields.io/badge/Project-Page-0f766e)](https://dmk041218.github.io/VisNec/)
