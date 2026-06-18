@@ -1,4 +1,4 @@
-# VisNec: Perceptive Visual Informativeness for Data-Efficient Multimodal Instruction Tuning
+# VisNec: Perceptive Visual Informativeness for Data-Efficient Multimodal Instruction Tuning (ECCV 2026)
 
 
 
