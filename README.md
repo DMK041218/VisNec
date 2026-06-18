@@ -39,9 +39,12 @@ bash ./LLaVA/scripts/v1_5/finetune_lora.sh
 ## Evaluation
 Please follow the [original LLaVA page](https://github.com/haotian-liu/LLaVA?tab=readme-ov-file#evaluation) and [VLMEvalKit](https://github.com/open-compass/VLMEvalKit) to evaluate models.
 # Citation
-@article{visnec2024,
-  title={Your Paper Title},
-  author={Your Name and others},
-  journal={arXiv},
-  year={2024}
+@misc{dong2026visnecmeasuringleveragingvisual,
+      title={VisNec: Measuring and Leveraging Visual Necessity for Multimodal Instruction Tuning}, 
+      author={Mingkang Dong and Hongyi Cai and Jie Li and Sifan Zhou and Bin Ren and Kunyu Peng and Yuqian Fu},
+      year={2026},
+      eprint={2603.01195},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2603.01195}, 
 }
