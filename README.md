@@ -2,6 +2,16 @@
 
 <p align="center"><b>ECCV 2026</b></p>
 
+<p align="center">
+  <a href="https://arxiv.org/search/cs?searchtype=author&query=Dong,+M">Mingkang Dong</a> ·
+  <a href="https://arxiv.org/search/cs?searchtype=author&query=Cai,+H">Hongyi Cai</a> ·
+  <a href="https://arxiv.org/search/cs?searchtype=author&query=Li,+J">Jie Li</a> ·
+  <a href="https://arxiv.org/search/cs?searchtype=author&query=Zhou,+S">Sifan Zhou</a> ·
+  <a href="https://arxiv.org/search/cs?searchtype=author&query=Ren,+B">Bin Ren</a> ·
+  <a href="https://arxiv.org/search/cs?searchtype=author&query=Peng,+K">Kunyu Peng</a> ·
+  <a href="https://arxiv.org/search/cs?searchtype=author&query=Fu,+Y">Yuqian Fu</a>
+</p>
+
 [![Project Page](https://img.shields.io/badge/Project-Page-0f766e)](https://dmk041218.github.io/VisNec/)
 [![Paper](https://img.shields.io/badge/arXiv-2603.01195-b31b1b)](https://arxiv.org/abs/2603.01195)
 [![Dataset](https://img.shields.io/badge/HuggingFace-VisNec-f59e0b)](https://huggingface.co/datasets/aaakiyasuqqqa/VisNec)
