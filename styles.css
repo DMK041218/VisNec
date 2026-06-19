@@ -84,7 +84,7 @@ p {
 }
 
 h1 {
-  max-width: 1240px;
+  max-width: 1280px;
   margin: 0 auto 18px;
   color: var(--emerald-800);
   font-weight: 900;
@@ -99,7 +99,8 @@ h1 span {
 
 .title-line {
   color: var(--emerald-800);
-  font-size: clamp(42px, 5.1vw, 68px);
+  font-size: clamp(30px, 4.55vw, 64px);
+  white-space: nowrap;
 }
 
 .title-line span,
@@ -118,8 +119,9 @@ h1 span {
 .title-tail {
   margin-top: 6px;
   color: var(--emerald-700);
-  font-size: clamp(32px, 3.75vw, 48px);
+  font-size: clamp(24px, 3.35vw, 46px);
   line-height: 1.16;
+  white-space: nowrap;
 }
 
 .author-block {
@@ -521,7 +523,7 @@ footer p {
   margin: 0;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 560px) {
   .hero-inner {
     width: min(1120px, calc(100% - 28px));
     padding-top: 48px;
@@ -532,6 +534,11 @@ footer p {
     line-height: 1.05;
     max-width: 100%;
     overflow-wrap: normal;
+  }
+
+  .title-line,
+  .title-tail {
+    white-space: normal;
   }
 
   .title-line span,
