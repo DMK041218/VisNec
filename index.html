@@ -13,13 +13,22 @@
   <body>
     <header class="hero">
       <div class="hero-inner">
-        <p class="venue">ECCV 2026</p>
         <h1>
-          <span class="title-main">VisNec:</span>
-          <span class="title-mid">Measuring and Leveraging</span>
-          <span class="title-mid">Visual Necessity</span>
-          <span class="title-tail">for Multimodal Instruction Tuning</span>
+          <span class="title-line">
+            <span class="title-main">VisNec:</span>
+            <span class="title-rest">
+              <span>Measuring and</span>
+              <span>Leveraging</span>
+            </span>
+          </span>
+          <span class="title-tail">
+            <span>Visual Necessity</span>
+            <span>for Multimodal</span>
+            <span>Instruction</span>
+            <span>Tuning</span>
+          </span>
         </h1>
+        <p class="venue">ECCV 2026</p>
 
         <div class="author-block">
           <p class="authors">
@@ -97,12 +106,16 @@
       </section>
 
       <section class="section results" id="results">
-        <h2>Sampling Ratio Study</h2>
+        <h2>Sensitivity Study</h2>
         <p>
-          VisNec remains consistently strong across sampling ratios and peaks around the top-15% subset,
-          outperforming random selection and other selection baselines in relative performance.
+          VisNec is robust to the semantic clustering granularity and remains consistently strong across
+          different sampling ratios, with the top-15% subset providing the best relative performance.
         </p>
-        <img class="ratio-figure" src="assets/figures/ratio.png" alt="Relative performance across sampling ratios" />
+        <img
+          class="sensitivity-figure"
+          src="assets/figures/sensitivity-combined.png"
+          alt="Sensitivity study for number of clusters and sampling ratio"
+        />
       </section>
 
       <section class="section comparisons" id="comparisons">
