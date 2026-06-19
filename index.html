@@ -43,11 +43,10 @@
 
     <main>
       <section class="figure-section" aria-label="VisNec pipeline figure">
-        <img src="assets/visnec-flow.png" alt="VisNec pipeline overview" />
+        <img src="assets/figures/pipeline.png" alt="VisNec pipeline overview" />
         <p>
-          VisNec compares multimodal and text-only predictive losses to estimate whether a sample
-          genuinely requires visual evidence, then combines the score with semantic clustering to preserve
-          task diversity during selection.
+          VisNec computes the gap between multimodal loss and text-only loss, then performs semantic
+          clustering to keep a visually necessary and task-diverse subset for VLM fine-tuning.
         </p>
       </section>
 
@@ -68,105 +67,41 @@
         </p>
       </section>
 
-      <section class="section examples" id="examples">
-        <h2>Qualitative Examples</h2>
+      <section class="section case-study" id="case-study">
+        <h2>Case Study</h2>
         <p>
-          VisNec separates samples by how much the visual input contributes to supervision quality. The
-          following examples illustrate visually necessary samples, redundant or text-dominant samples, and
-          multimodally misaligned annotations.
+          VisNec scores form an interpretable spectrum rather than a simple ranking. Low VisNec reveals
+          mismatched supervision where the annotated answer conflicts with the image; medium VisNec often
+          corresponds to redundant samples whose answers are visually independent; high VisNec captures
+          visually dependent samples that require dense image evidence.
         </p>
-
-        <div class="example-group">
-          <div class="group-heading critical">
-            <span>Vision-critical</span>
-            <p>The image is necessary to answer the instruction correctly.</p>
-          </div>
-          <div class="example-grid two">
-            <article class="example-card">
-              <img src="assets/examples/ski-race.png" alt="Cross-country ski race example" />
-              <div>
-                <strong>Question</strong>
-                <p>What race is this?</p>
-                <strong>Answer</strong>
-                <p>Ski</p>
-              </div>
-            </article>
-            <article class="example-card">
-              <img src="assets/examples/bear-collection.png" alt="Teddy bear collection example" />
-              <div>
-                <strong>Question</strong>
-                <p>Why are there so many bears?</p>
-                <strong>Answer</strong>
-                <p>Collection</p>
-              </div>
-            </article>
-          </div>
+        <img class="wide-figure" src="assets/figures/case-study.png" alt="VisNec case study spectrum" />
+        <div class="spectrum-grid">
+          <article class="low">
+            <strong>Low VisNec</strong>
+            <span>Misalignment</span>
+            <p>The image contradicts the annotation, so the sample should be filtered rather than trusted.</p>
+          </article>
+          <article class="medium">
+            <strong>Medium VisNec</strong>
+            <span>Redundancy</span>
+            <p>The answer can be inferred from general knowledge or language priors with limited visual need.</p>
+          </article>
+          <article class="high">
+            <strong>High VisNec</strong>
+            <span>Visually dependent</span>
+            <p>The instruction requires localized visual evidence, making the sample valuable for tuning.</p>
+          </article>
         </div>
+      </section>
 
-        <div class="example-group">
-          <div class="group-heading redundant">
-            <span>Redundant / text-dominant</span>
-            <p>These samples contribute less visual reasoning signal and can be dominated by shallow cues.</p>
-          </div>
-          <div class="example-grid two">
-            <article class="example-card">
-              <img src="assets/examples/toothbrush-display.png" alt="Retail toothbrush display example" />
-              <div>
-                <strong>Observation</strong>
-                <p>Retail display with repeated toothbrush products and packaging cues.</p>
-              </div>
-            </article>
-            <article class="example-card">
-              <img src="assets/examples/stop-harper.png" alt="Text-heavy protest sign example" />
-              <div>
-                <strong>Observation</strong>
-                <p>Text-heavy sign where the answer is largely recoverable from visible words.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <div class="example-group">
-          <div class="group-heading misaligned">
-            <span>Misaligned</span>
-            <p>The annotation conflicts with the visual evidence, making the sample harmful for tuning.</p>
-          </div>
-          <div class="example-grid three">
-            <article class="example-card">
-              <img src="assets/examples/elephant-zoo.png" alt="Elephant in zoo-like enclosure example" />
-              <div>
-                <strong>Question</strong>
-                <p>Where is this elephant located?</p>
-                <strong>Label</strong>
-                <p>A. wild</p>
-                <strong>Visual evidence</strong>
-                <p>Zoo-like enclosure</p>
-              </div>
-            </article>
-            <article class="example-card">
-              <img src="assets/examples/tennis-sponsor.png" alt="Tennis event sponsor sign example" />
-              <div>
-                <strong>Question</strong>
-                <p>What type of industry is sponsoring this event?</p>
-                <strong>Label</strong>
-                <p>B. automobiles</p>
-                <strong>Visual evidence</strong>
-                <p>Hotels signage</p>
-              </div>
-            </article>
-            <article class="example-card">
-              <img src="assets/examples/surfing-coast.png" alt="Surfers in coastal water example" />
-              <div>
-                <strong>Question</strong>
-                <p>What activity are they partaking in?</p>
-                <strong>Label</strong>
-                <p>C. fishing</p>
-                <strong>Visual evidence</strong>
-                <p>Surfing</p>
-              </div>
-            </article>
-          </div>
-        </div>
+      <section class="section results" id="results">
+        <h2>Sampling Ratio Study</h2>
+        <p>
+          VisNec remains consistently strong across sampling ratios and peaks around the top-15% subset,
+          outperforming random selection and other selection baselines in relative performance.
+        </p>
+        <img class="ratio-figure" src="assets/figures/ratio.png" alt="Relative performance across sampling ratios" />
       </section>
 
       <section class="section" id="method">
