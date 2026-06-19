@@ -68,6 +68,107 @@
         </p>
       </section>
 
+      <section class="section examples" id="examples">
+        <h2>Qualitative Examples</h2>
+        <p>
+          VisNec separates samples by how much the visual input contributes to supervision quality. The
+          following examples illustrate visually necessary samples, redundant or text-dominant samples, and
+          multimodally misaligned annotations.
+        </p>
+
+        <div class="example-group">
+          <div class="group-heading critical">
+            <span>Vision-critical</span>
+            <p>The image is necessary to answer the instruction correctly.</p>
+          </div>
+          <div class="example-grid two">
+            <article class="example-card">
+              <img src="assets/examples/ski-race.png" alt="Cross-country ski race example" />
+              <div>
+                <strong>Question</strong>
+                <p>What race is this?</p>
+                <strong>Answer</strong>
+                <p>Ski</p>
+              </div>
+            </article>
+            <article class="example-card">
+              <img src="assets/examples/bear-collection.png" alt="Teddy bear collection example" />
+              <div>
+                <strong>Question</strong>
+                <p>Why are there so many bears?</p>
+                <strong>Answer</strong>
+                <p>Collection</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="example-group">
+          <div class="group-heading redundant">
+            <span>Redundant / text-dominant</span>
+            <p>These samples contribute less visual reasoning signal and can be dominated by shallow cues.</p>
+          </div>
+          <div class="example-grid two">
+            <article class="example-card">
+              <img src="assets/examples/toothbrush-display.png" alt="Retail toothbrush display example" />
+              <div>
+                <strong>Observation</strong>
+                <p>Retail display with repeated toothbrush products and packaging cues.</p>
+              </div>
+            </article>
+            <article class="example-card">
+              <img src="assets/examples/stop-harper.png" alt="Text-heavy protest sign example" />
+              <div>
+                <strong>Observation</strong>
+                <p>Text-heavy sign where the answer is largely recoverable from visible words.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="example-group">
+          <div class="group-heading misaligned">
+            <span>Misaligned</span>
+            <p>The annotation conflicts with the visual evidence, making the sample harmful for tuning.</p>
+          </div>
+          <div class="example-grid three">
+            <article class="example-card">
+              <img src="assets/examples/elephant-zoo.png" alt="Elephant in zoo-like enclosure example" />
+              <div>
+                <strong>Question</strong>
+                <p>Where is this elephant located?</p>
+                <strong>Label</strong>
+                <p>A. wild</p>
+                <strong>Visual evidence</strong>
+                <p>Zoo-like enclosure</p>
+              </div>
+            </article>
+            <article class="example-card">
+              <img src="assets/examples/tennis-sponsor.png" alt="Tennis event sponsor sign example" />
+              <div>
+                <strong>Question</strong>
+                <p>What type of industry is sponsoring this event?</p>
+                <strong>Label</strong>
+                <p>B. automobiles</p>
+                <strong>Visual evidence</strong>
+                <p>Hotels signage</p>
+              </div>
+            </article>
+            <article class="example-card">
+              <img src="assets/examples/surfing-coast.png" alt="Surfers in coastal water example" />
+              <div>
+                <strong>Question</strong>
+                <p>What activity are they partaking in?</p>
+                <strong>Label</strong>
+                <p>C. fishing</p>
+                <strong>Visual evidence</strong>
+                <p>Surfing</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section class="section" id="method">
         <h2>Method Overview</h2>
         <div class="method-grid">

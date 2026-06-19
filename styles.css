@@ -315,6 +315,101 @@ h3 {
   font-size: 16px;
 }
 
+.examples > p {
+  max-width: 900px;
+}
+
+.example-group {
+  margin-top: 28px;
+}
+
+.group-heading {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 14px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  border: 1px solid rgba(5, 150, 105, 0.16);
+  background: #ffffff;
+}
+
+.group-heading span {
+  color: #111827;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.group-heading p {
+  margin: 0;
+  color: #64748b;
+  font-size: 15px;
+}
+
+.group-heading.critical {
+  border-left: 6px solid var(--emerald-600);
+}
+
+.group-heading.redundant {
+  border-left: 6px solid #64748b;
+}
+
+.group-heading.misaligned {
+  border-left: 6px solid var(--red);
+}
+
+.example-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.example-grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.example-grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.example-card {
+  overflow: hidden;
+  border: 1px solid rgba(5, 150, 105, 0.16);
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.07);
+}
+
+.example-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #f1f5f9;
+}
+
+.example-card div {
+  padding: 16px;
+}
+
+.example-card strong {
+  display: block;
+  margin: 10px 0 2px;
+  color: #0f172a;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.example-card strong:first-child {
+  margin-top: 0;
+}
+
+.example-card p {
+  margin: 0;
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
 .highlight-grid strong {
   display: block;
   margin-bottom: 8px;
@@ -422,12 +517,14 @@ footer p {
   .method-grid,
   .highlight-grid,
   .resource-grid,
+  .example-grid.two,
+  .example-grid.three,
   .artifacts ul {
     grid-template-columns: 1fr;
   }
 
   h2 {
-    font-size: 30px;
+    font-size: 27px;
   }
 
   .abstract-box p,
