@@ -21,7 +21,7 @@
 [![Dataset](https://img.shields.io/badge/HuggingFace-VisNec-f59e0b)](https://huggingface.co/datasets/aaakiyasuqqqa/VisNec)
 [![Code](https://img.shields.io/badge/GitHub-Code-111827)](https://github.com/DMK041218/VisNec)
 
-**Hongyi Cai\***, **Mingkang Dong\***, Jie Li, Sifan Zhou, Bin Ren, Kunyu Peng, **Yuqian Fu†**
+
 
 \* Equal contribution. † Corresponding author.
 
