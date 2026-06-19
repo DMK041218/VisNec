@@ -7,48 +7,107 @@
       name="description"
       content="VisNec: Measuring and Leveraging Visual Necessity for Multimodal Instruction Tuning."
     />
-    <title>VisNec</title>
+    <title>VisNec: Visual Necessity for Multimodal Instruction Tuning</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main>
-      <section class="hero" id="top">
+    <header class="hero">
+      <div class="hero-inner">
         <p class="venue">ECCV 2026</p>
-        <h1>VisNec: Measuring and Leveraging Visual Necessity for Multimodal Instruction Tuning</h1>
-        <p class="authors">
-          <strong>Hongyi Cai</strong><sup>*</sup>,
-          <strong>Mingkang Dong</strong><sup>*</sup>,
-          Jie Li,
-          Sifan Zhou,
-          Bin Ren,
-          Kunyu Peng,
-          <strong>Yuqian Fu</strong><sup>&dagger;</sup>
-        </p>
-        <p class="notes"><sup>*</sup>Equal contribution &nbsp;&nbsp; <sup>&dagger;</sup>Corresponding author</p>
-        <div class="actions" aria-label="Project resources">
-          <a href="https://arxiv.org/abs/2603.01195">Paper</a>
-          <a href="https://huggingface.co/datasets/aaakiyasuqqqa/VisNec">Dataset</a>
-          <a href="https://github.com/DMK041218/VisNec">Code</a>
+        <h1>
+          <span class="title-main">VisNec:</span>
+          <span>Measuring and Leveraging Visual Necessity</span>
+          <span>for Multimodal Instruction Tuning</span>
+        </h1>
+
+        <div class="author-block">
+          <p class="authors">
+            <span><strong>Hongyi Cai</strong><sup>*</sup></span>
+            <span><strong>Mingkang Dong</strong><sup>*</sup></span>
+            <span>Jie Li</span>
+            <span>Sifan Zhou</span>
+            <span>Bin Ren</span>
+            <span>Kunyu Peng</span>
+            <span><strong>Yuqian Fu</strong><sup>&dagger;</sup></span>
+          </p>
+          <p class="notes"><sup>*</sup>Equal contribution &nbsp;&nbsp; <sup>&dagger;</sup>Corresponding author</p>
         </div>
-      </section>
 
-      <section class="teaser" aria-label="VisNec pipeline figure">
+        <div class="actions" aria-label="Project resources">
+          <a class="button paper" href="https://arxiv.org/abs/2603.01195">Paper</a>
+          <a class="button code" href="https://github.com/DMK041218/VisNec">Code</a>
+          <a class="button data" href="https://huggingface.co/datasets/aaakiyasuqqqa/VisNec">Dataset</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="figure-section" aria-label="VisNec pipeline figure">
         <img src="assets/visnec-flow.png" alt="VisNec pipeline overview" />
+        <p>
+          VisNec compares multimodal and text-only predictive losses to estimate whether a sample
+          genuinely requires visual evidence, then combines the score with semantic clustering to preserve
+          task diversity during selection.
+        </p>
       </section>
 
-      <section class="section" id="abstract">
+      <section class="abstract-box" id="abstract">
         <h2>Abstract</h2>
         <p>
           The effectiveness of multimodal instruction tuning depends not only on dataset scale, but
-          critically on whether training samples genuinely require visual reasoning. VisNec measures the
-          marginal contribution of visual input by comparing predictive loss with and without visual context,
-          identifying whether a training instance is vision-critical, redundant, or misaligned.
+          critically on whether training samples genuinely require visual reasoning. Existing instruction
+          datasets often contain visually redundant samples that are solvable from text alone, as well as
+          multimodally misaligned supervision that can degrade learning.
         </p>
         <p>
-          To preserve task diversity, VisNec combines visual necessity scoring with semantic clustering and
-          selects high-necessity samples within each cluster. Across downstream benchmarks, this enables
-          data-efficient multimodal instruction tuning using only a compact selected subset.
+          We propose <strong>VisNec</strong>, a principled data selection framework that measures the
+          marginal contribution of visual input during instruction tuning. By comparing predictive loss
+          with and without visual context, VisNec identifies whether a training instance is vision-critical,
+          redundant, or misaligned. Combined with semantic clustering, VisNec selects compact, diverse,
+          and visually necessary subsets for data-efficient multimodal instruction tuning.
         </p>
+      </section>
+
+      <section class="section" id="method">
+        <h2>Method Overview</h2>
+        <div class="method-grid">
+          <article>
+            <span>01</span>
+            <h3>Estimate Visual Necessity</h3>
+            <p>Compute the loss gap between multimodal and text-only inference for each instruction sample.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Preserve Task Diversity</h3>
+            <p>Cluster semantic instructions and select high-necessity examples within each cluster.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Tune Efficiently</h3>
+            <p>Fine-tune VLMs with a top-15% VisNec subset instead of the full instruction dataset.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="highlights">
+        <h2>Highlights</h2>
+        <div class="highlight-grid">
+          <article>
+            <strong>15%</strong>
+            <span>selected data</span>
+            <p>Compact subsets designed for data-efficient multimodal instruction tuning.</p>
+          </article>
+          <article>
+            <strong>Visual necessity</strong>
+            <span>sample-level signal</span>
+            <p>Separates vision-critical samples from text-solvable or mismatched supervision.</p>
+          </article>
+          <article>
+            <strong>Diversity-aware</strong>
+            <span>clustered selection</span>
+            <p>Balances high VisNec scores with broad task coverage across instruction types.</p>
+          </article>
+        </div>
       </section>
 
       <section class="section" id="resources">
@@ -57,21 +116,24 @@
           <a href="https://arxiv.org/abs/2603.01195">
             <span>Paper</span>
             <strong>arXiv:2603.01195</strong>
+            <p>Read the full paper and technical details.</p>
+          </a>
+          <a href="https://github.com/DMK041218/VisNec">
+            <span>Code</span>
+            <strong>GitHub Repository</strong>
+            <p>Scoring, subset construction, and LLaVA integration scripts.</p>
           </a>
           <a href="https://huggingface.co/datasets/aaakiyasuqqqa/VisNec">
             <span>Dataset</span>
             <strong>Hugging Face</strong>
-          </a>
-          <a href="https://github.com/DMK041218/VisNec">
-            <span>Code</span>
-            <strong>GitHub</strong>
+            <p>Selected subsets and LoRA artifacts released for VisNec.</p>
           </a>
         </div>
       </section>
 
-      <section class="section" id="dataset">
+      <section class="section artifacts" id="dataset">
         <h2>Released Artifacts</h2>
-        <ul class="artifact-list">
+        <ul>
           <li><code>llava_v1.5-7b-top15.json</code></li>
           <li><code>llava_v1.5-7b-top15_vf.json</code></li>
           <li><code>llava_v1.5-7b-top15_k20-lora/</code></li>
@@ -79,8 +141,9 @@
         </ul>
       </section>
 
-      <section class="section" id="citation">
+      <section class="section citation" id="citation">
         <h2>Citation</h2>
+        <p>If you find VisNec useful in your research, please cite:</p>
         <pre><code>@misc{dong2026visnecmeasuringleveragingvisual,
       title={VisNec: Measuring and Leveraging Visual Necessity for Multimodal Instruction Tuning},
       author={Mingkang Dong and Hongyi Cai and Jie Li and Sifan Zhou and Bin Ren and Kunyu Peng and Yuqian Fu},
@@ -92,5 +155,9 @@
 }</code></pre>
       </section>
     </main>
+
+    <footer>
+      <p>&copy; 2026 VisNec. All rights reserved.</p>
+    </footer>
   </body>
 </html>
