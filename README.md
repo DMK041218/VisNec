@@ -28,7 +28,7 @@
   </a>
 </p>
 
-![/assets/figure/pipeline](.png)
+![Pipeline](./assets/figure/pipeline.png)
 
 \* Equal contribution. † Corresponding author.
 
