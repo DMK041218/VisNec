@@ -28,11 +28,9 @@
   </a>
 </p>
 
-
 <p align="center">
-![Pipeline](./assets/figures/pipeline.png)
+  <img src="./assets/figures/pipeline.png" alt="Pipeline" width="90%">
 </p>
-\* Equal contribution. † Corresponding author.
 
 VisNec measures visual necessity in multimodal instruction data and uses that signal to select more informative samples for data-efficient multimodal instruction tuning.
 
