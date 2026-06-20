@@ -79,9 +79,11 @@ bash ./LLaVA/scripts/v1_5/finetune_lora.sh
 Please follow the original [LLaVA evaluation guide](https://github.com/haotian-liu/LLaVA?tab=readme-ov-file#evaluation) and [VLMEvalKit](https://github.com/open-compass/VLMEvalKit) for model evaluation.
 
 ## Citation
-If you find this work useful, please cite:
+
+If you find this work useful, please cite VisNec:
+
 ```bibtex
-@misc{dong2026visnecmeasuringleveragingvisual,
+@misc{dong2026visnec,
       title={VisNec: Measuring and Leveraging Visual Necessity for Multimodal Instruction Tuning},
       author={Mingkang Dong and Hongyi Cai and Jie Li and Sifan Zhou and Bin Ren and Kunyu Peng and Yuqian Fu},
       year={2026},
@@ -91,12 +93,40 @@ If you find this work useful, please cite:
       url={https://arxiv.org/abs/2603.01195},
 }
 ```
-@misc{cai2026lowconfidencegoldrefininglowconfidence,
-      title={Low-Confidence Gold: Refining Low-Confidence Samples for Efficient Instruction Tuning}, 
+
+## Related Works
+
+You may also find our related works on data-efficient instruction tuning and multimodal instruction tuning useful:
+
+```bibtex
+@misc{dong2026onceforall,
+      title={Once-For-All: A Train-Once and Select-Anytime Framework for Multimodal Instruction Tuning},
+      author={Mingkang Dong and Hongyi Cai and Xiwen Lei and Jie Li and Tao Zhang and Muxin Pu},
+      year={2026},
+      eprint={2605.26761},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2605.26761},
+}
+
+@misc{cai2025mergeit,
+      title={MergeIT: From Selection to Merging for Efficient Instruction Tuning},
+      author={Hongyi Cai and Yuqian Fu and Hongming Fu and Bo Zhao},
+      year={2025},
+      eprint={2503.00034},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2503.00034},
+}
+
+@misc{cai2026lowconfidencegold,
+      title={Low-Confidence Gold: Refining Low-Confidence Samples for Efficient Instruction Tuning},
       author={Hongyi Cai and Jie Li and Mohammad Mahdinur Rahman and Wenzhen Dong},
       year={2026},
       eprint={2502.18978},
       archivePrefix={arXiv},
       primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2502.18978}, 
+      url={https://arxiv.org/abs/2502.18978},
 }
+```
+
