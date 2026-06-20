@@ -79,7 +79,7 @@ bash ./LLaVA/scripts/v1_5/finetune_lora.sh
 Please follow the original [LLaVA evaluation guide](https://github.com/haotian-liu/LLaVA?tab=readme-ov-file#evaluation) and [VLMEvalKit](https://github.com/open-compass/VLMEvalKit) for model evaluation.
 
 ## Citation
-
+If you find this work useful, please cite:
 ```bibtex
 @misc{dong2026visnecmeasuringleveragingvisual,
       title={VisNec: Measuring and Leveraging Visual Necessity for Multimodal Instruction Tuning},
@@ -91,3 +91,12 @@ Please follow the original [LLaVA evaluation guide](https://github.com/haotian-l
       url={https://arxiv.org/abs/2603.01195},
 }
 ```
+@misc{cai2026lowconfidencegoldrefininglowconfidence,
+      title={Low-Confidence Gold: Refining Low-Confidence Samples for Efficient Instruction Tuning}, 
+      author={Hongyi Cai and Jie Li and Mohammad Mahdinur Rahman and Wenzhen Dong},
+      year={2026},
+      eprint={2502.18978},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2502.18978}, 
+}
