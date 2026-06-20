@@ -16,10 +16,17 @@
   <sup>*</sup> Equal contribution &nbsp;&nbsp; <sup>†</sup> Corresponding author
 </p>
 
-[![Project Page](https://img.shields.io/badge/Project-Page-0f766e)](https://dmk041218.github.io/VisNec/)
-[![Paper](https://img.shields.io/badge/arXiv-2603.01195-b31b1b)](https://arxiv.org/abs/2603.01195)
-[![Dataset](https://img.shields.io/badge/HuggingFace-VisNec-f59e0b)](https://huggingface.co/datasets/aaakiyasuqqqa/VisNec)
-[![Code](https://img.shields.io/badge/GitHub-Code-111827)](https://github.com/DMK041218/VisNec)
+<p align="center">
+  <a href="https://dmk041218.github.io/VisNec/">
+    <img src="https://img.shields.io/badge/Project-Page-0f766e" alt="Project Page">
+  </a>
+  <a href="https://arxiv.org/abs/2603.01195">
+    <img src="https://img.shields.io/badge/arXiv-2603.01195-b31b1b" alt="arXiv">
+  </a>
+  <a href="https://huggingface.co/datasets/aaakiyasuqqqa/VisNec">
+    <img src="https://img.shields.io/badge/HuggingFace-VisNec-f59e0b" alt="Dataset">
+  </a>
+</p>
 
 
 
