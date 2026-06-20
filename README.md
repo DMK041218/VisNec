@@ -5,10 +5,10 @@
 <p align="center">
   Jie Li<sup>*</sup> ·
   Hongyi Cai<sup>*</sup> ·
-  Mingkang Dong·
+  Mingkang Dong ·
   Muxin Pu ·
   Shan You ·
-  Shan You·
+  Fei Wang ·
   Tao Huang<sup>†</sup>
 </p>
 
