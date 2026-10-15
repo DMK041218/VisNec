@@ -103,34 +103,14 @@ If you find this work useful, please cite VisNec:
 You may also find our related works on data-efficient instruction tuning and multimodal instruction tuning useful:
 
 ```bibtex
-@misc{dong2026onceforall,
-      title={Once-For-All: A Train-Once and Select-Anytime Framework for Multimodal Instruction Tuning},
-      author={Mingkang Dong and Hongyi Cai and Xiwen Lei and Jie Li and Tao Zhang and Muxin Pu},
+@misc{dong2026onceselectreusabledataselection,
+      title={OnceSelect: Reusable Data Selection for Efficient Multimodal Instruction Tuning}, 
+      author={Mingkang Dong and Muxin Pu and Hongyi Cai and JieLi and Jiancheng Pan and Xu Zheng and Yadan Luo and Yuqian Fu},
       year={2026},
       eprint={2605.26761},
       archivePrefix={arXiv},
       primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2605.26761},
-}
-
-@misc{cai2025mergeit,
-      title={MergeIT: From Selection to Merging for Efficient Instruction Tuning},
-      author={Hongyi Cai and Yuqian Fu and Hongming Fu and Bo Zhao},
-      year={2025},
-      eprint={2503.00034},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2503.00034},
-}
-
-@misc{cai2026lowconfidencegold,
-      title={Low-Confidence Gold: Refining Low-Confidence Samples for Efficient Instruction Tuning},
-      author={Hongyi Cai and Jie Li and Mohammad Mahdinur Rahman and Wenzhen Dong},
-      year={2026},
-      eprint={2502.18978},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2502.18978},
+      url={https://arxiv.org/abs/2605.26761}, 
 }
 ```
 
