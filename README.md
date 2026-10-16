@@ -109,9 +109,8 @@ publisher="Springer Nature Switzerland",
 address="Cham",
 pages="531--548",
 abstract="The effectiveness of multimodal instruction tuning depends not only on dataset scale, but also critically on whether training samples genuinely require visual reasoning. However, existing instruction datasets often contain a substantial portion of visually redundant samples (solvable from text alone), as well as multimodally misaligned supervision that can degrade learning. To address this, we propose VisNec (Visual Necessity Score), a principled data selection framework that measures the marginal contribution of visual input during instruction tuning. By comparing predictive loss with and without visual context, VisNec identifies whether a training instance is vision-critical, redundant, or misaligned. To preserve task diversity, we combine VisNec with semantic clustering and select high-necessity samples within each cluster. Across 10 downstream benchmarks, training on only 15{\%} of the LLaVA-665K dataset selected by VisNec achieves 100.2{\%} of full-data performance. On the smaller Vision-Flan-186K dataset, our selection not only further reduces data size but surpasses full-data training by 15.8{\%}. These results demonstrate that measuring and leveraging visual necessity provides an effective solution for both efficient and robust multimodal instruction tuning. Project Page: https://dmk041218.github.io/VisNec/.",
-isbn="978-3-032-37577-3"
+isbn="978-3-032-37577-3"}
 ```
-}
 
 
 
